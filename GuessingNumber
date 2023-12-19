@@ -1,0 +1,49 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class GuessingNumber
+{
+	public static void main(String[] args) {
+	    Scanner scr = new Scanner(System.in);
+	    System.out.println("Please Enter any Number Between 1 to 100");
+	    int target=scr.nextInt();
+	    int min = 1;
+	    int max = 100;
+	    Random r = new Random();
+	    int a = r.nextInt((max-min)+min);
+	    System.out.println("target Number is : "+a);
+	    while(true){
+	    if(target>0 && target<100){
+	        if(a==target){
+	           // System.out.println("Congrats 🎉 you guees the correct answer");
+	             System.out.println(a);
+	             break;
+	        }
+	        if(a<target){
+	            
+	            String message = (target - a > 20) ? "Ohh...Your Guessing Number is Too High 👆" :(target-a>10)? "Hint :  \nOhh...Your Guessing Number is near":"Hint : \nYour almost There";
+	            System.out.println(message);
+	            System.out.println("Please ReEnter the Number again ♻️");
+	            target=scr.nextInt();
+	            
+	        }
+	        else{
+	            String message = (a-target > 20) ? "Ohh...Your Guessing Number is Too Less 👆" :(a-target>10)? "Hint :  \nOhh...Your Guessing Number is near":"Hint : \nYour almost There";;
+	            System.out.println(message);
+	            System.out.println("Please ReEnter the Number again ♻️");
+	            target=scr.nextInt();
+	        }
+	    }
+	    }
+	     System.out.println("Congrats 🎉 you guees the correct answer");
+	        
+	    
+	    
+		
+	}
+}
