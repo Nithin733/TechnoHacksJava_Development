@@ -1,0 +1,33 @@
+import java.util.*;
+ class Main{
+	public static void main(String[] args) {
+	    Scanner scr = new Scanner(System.in);
+	    Map<Integer,String> map = new HashMap<>();
+	    System.out.println("1st Enter Your Task Please");
+	    String S = scr.nextLine();
+	    int i = 1;
+	    while(true){
+	        map.put(i,S);
+	        
+	        i++;
+	        System.out.println("Enter Add for for more Tasks or No for finish the task ");
+	        String choice = scr.nextLine();
+	       
+	       
+	       if(choice.equalsIgnoreCase("Add")){
+	           System.out.println(i+" Please Enter your  Task");
+	             S = scr.nextLine();
+	           
+	       }
+	       else{
+	           System.out.println("Thanks...");
+	           break;
+	       }
+	    }
+	    System.out.println("Your Tasks:");
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ". " + entry.getValue());
+	   
+	}
+}
+}
